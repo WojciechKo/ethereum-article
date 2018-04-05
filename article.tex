@@ -9,8 +9,17 @@
 % \renewcommand\UrlFont{\color{blue}\rmfamily}
 
 % Display polish characters
-\usepackage{polski}
+\usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
+
+\renewcommand{\keywords}[1]{
+    \def\and{* }
+    \begingroup
+    \par
+    \bigskip
+    \noindent\textbf{Słowa Kluczowe: } #1\par
+    \endgroup
+}
 
 \begin{document}
 
