@@ -1,4 +1,4 @@
-\documentclass[runningheads]{llncs}
+\documentclass[]{llncs}
 
 \usepackage{graphicx}
 % Used for displaying a sample figure. If possible, figure files should
@@ -35,20 +35,54 @@
 \end{abstract}
 
 \section{First Section}
-\subsection{A Subsection Sample}
-Please note that the first paragraph of a section or subsection is
-not indented. The first paragraph that follows a table, figure,
-equation etc. does not need an indent, either.
+\subsection{Second Section}
+\subsubsection{Third Section}
+\paragraph{Fourth Level}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-Subsequent paragraphs, however, are indented.
 
-\subsubsection{Sample Heading (Third Level)} Only two levels of
-headings should be numbered. Lower level headings remain unnumbered;
-they are formatted as run-in headings.
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\begin{thebibliography}{8}
+  \bibitem{ethereum} Ethereum Homepage, \url{https://www.ethereum.org/}
+\end{thebibliography}
 
-\paragraph{Sample Heading (Fourth Level)}
-The contribution should contain no more than four levels of
-headings. Table~\ref{tab1} gives a summary of all heading levels.
+
+
+% ########## START OF SAMPLES
+
+\newpage
+\newpage
+
+\section{Takie tam przydatne przykłady}
+\begin{definition} text \end{definition}
+\begin{case} text \end{case}
+\begin{proof} text \end{proof}
+
+\noindent Widać na równaniu:
+\begin{equation}
+  x + y = z
+\end{equation}
+
+Please try to avoid rasterized images for line-art diagrams and
+schemas. Whenever possible, use vector graphics instead (see
+Fig.~\ref{fig1}).
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{fig1.eps}
+  \caption{A figure caption is always placed below the illustration.
+    Please note that short captions are centered, while long ones are
+  justified by the macro package automatically.} \label{fig1}
+\end{figure}
+
+Tabla~\ref{tab1} przedstawia że działa.
 
 \begin{table}
   \caption{Table captions should be placed above the
@@ -66,55 +100,6 @@ headings. Table~\ref{tab1} gives a summary of all heading levels.
   \end{tabular}
 \end{table}
 
+% ########## END OF SAMPLES
 
-\noindent Displayed equations are centered and set on a separate
-line.
-\begin{equation}
-  x + y = z
-\end{equation}
-Please try to avoid rasterized images for line-art diagrams and
-schemas. Whenever possible, use vector graphics instead (see
-Fig.~\ref{fig1}).
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{fig1.eps}
-  \caption{A figure caption is always placed below the illustration.
-    Please note that short captions are centered, while long ones are
-  justified by the macro package automatically.} \label{fig1}
-\end{figure}
-
-\begin{theorem}
-  This is a sample theorem. The run-in heading is set in bold, while
-  the following text appears in italics. Definitions, lemmas,
-  propositions, and corollaries are styled the same way.
-\end{theorem}
-%
-% the environments 'definition', 'lemma', 'proposition', 'corollary',
-% 'remark', and 'example' are defined in the LLNCS documentclass as well.
-%
-\begin{proof}
-  Proofs, examples, and remarks have the initial word in italics,
-  while the following text appears in normal font.
-\end{proof}
-For citations of references, we prefer the use of square brackets
-and consecutive numbers. Citations using labels or the author/year
-convention are also acceptable. The following bibliography provides
-a sample reference list with entries for journal
-articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
-book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
-and a homepage~\cite{ref_url1}. Multiple citations are grouped
-\cite{ref_article1,ref_lncs1,ref_book1},
-\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
-%
-% ---- Bibliography ----
-%
-% BibTeX users should specify bibliography style 'splncs04'.
-% References will then be sorted and formatted in the correct style.
-%
-% \bibliographystyle{splncs04}
-% \bibliography{mybibliography}
-%
-\begin{thebibliography}{8}
-  \bibitem{ethereum} Ethereum Homepage, \url{https://www.ethereum.org/}
-\end{thebibliography}
 \end{document}
