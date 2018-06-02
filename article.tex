@@ -82,6 +82,28 @@
   drugiej strony istnienie funkcji która pozwala na wybranie całego Etheru z
   kontraktu może wzbudzić podejrzenia co do intencji jego twórcy.
 
+  Funkcje zdefiniowane w smart kontrakcie można podzielić na 2 kategorie. Te
+  które czytają dane i te które je zmieniają. Jako że dostęp do danych z
+  blockchainu jest publiczny i można stworzyć własny węzeł który jest pełną
+  kopią blockchainu, dane można odczytać w każdej chwili. Inaczej jest w
+  przypadku funkcji która modyfikuje stan kontraktu lub samego tworzenia
+  konraktu. Wynika to z faktu iż każdy z węzłów w sieci musi wywołać tę funkcję
+  aby potwierdzić czy inne węzły również ją wykonały i stan blockchainu po
+  wywołaniu funkcji się zgadza między węzłami. Fakt iż musimy wykonać tę funkcję
+  na wszystkich węzłach powoduje że za jej wywołanie, wołający musi zapłacić.
+  Walutą w której dokonuje się opłaty jest Gas który jest kupowany podczas
+  zlecania wywołania funkcji za Ether.
+
+  Ilość Gasu potrzebnego do wywołania funkcji jest proporcjonalna do złożoności
+  obliczeniowej wołanej funkcji. Cena Gasu zależy od aktualnego obciążenia sieci
+  oraz od tego czy chcemy aby nasza funkcja została wywołana jak najszybciej.
+
+  Wywołania funkcji, utworzenie smart kontraktu oraz transfer Etheru na inne
+  konto nazywamy transakcją. Wszystkie transakcje trafiają do puli transakcji
+  (ang.  Transaction Pool). Transakcje z puli są akceptowane zaczynając od tych
+  za które jest największa opłata ponieważ te są najbardziej korzystne dla
+  kopaczy odpowiedzialnych za utrzymanie konsensusu.
+
 \subsection{System do głosowania}
 
   Smart kontrakty mogą zostać wykorzystane do zbudowania systemu do tajnego
@@ -150,49 +172,58 @@
 
 \section{Komunikacja z siecią Ethereum}
 
-  Sieć Ethereum\cite{ethereum-doc} składa się z węzłów które komunikują się ze sobą aby ustalić
-  wspólną wersję blockchainu. Węzeł to serwer który posiada lokalną kopię
-  blockchainu od początku jego istnienia wraz ze wszystkimi transakcjami i smart
-  kontraktami które zostały na nim zapisane. Dodatkowo węzeł implementuje
-  protokół JSON-RPC poprzez który następuje komunikacja klienta z węzłem.
-  Jednym z bardziej znanych klientów jest klient napisany w języku JavaScript o
-  nazwie Web3.js\footnote{https://github.com/ethereum/web3.js/}. Wykorzystując
-  go można stworzyć aplikację działającą w przeglądarce która komunikuje się
-  bezpośrednio z węzłem Ethereum.
+  Sieć Ethereum\cite{ethereum-doc} składa się z węzłów które komunikują się ze
+  sobą aby ustalić wspólną wersję blockchainu. Jest to nazywana ustaleniem
+  konsensusu i jego zasady nie są opisane w niniejszym artykule. Węzeł to serwer
+  który posiada lokalną kopię blockchainu od początku istnienia Ethereum wraz ze
+  wszystkimi transakcjami i smart kontraktami które zostały na nim zapisane.
+  Ponadto węzeł implementuje protokół JSON-RPC poprzez który następuje
+  komunikacja klienta z węzłem. Jednym z bardziej znanych klientów jest klient
+  napisany w języku JavaScript o nazwie
+  Web3.js\footnote{https://github.com/ethereum/web3.js/}. Wykorzystując go można
+  stworzyć aplikację działającą w przeglądarce która komunikuje się bezpośrednio
+  z węzłem Ethereum.
 
-  Inną możliwością jest stworzenie własnego serwera który komunikuje sie z
-  węzłem. Następnie aplikacja przeglądarkowa komunikuje się tylko z naszym
-  serwerem bez bezpośredniej komunikacji z węzłem. Takie rozwiązanie może być
-  wykorzystane w celu przyspieszenia aplikacji aby nie odpytywać węzeł o dane za
-  każdym razem tylko przechowywać je w pamięci podręcznej na serwerze.
+  Aby utworzyć własny węzeł Ethereum można wykorzystać oficjalną implementację
+  węzła którą można pobrać z serwisu
+  Github\footnote{https://github.com/ethereum/go-ethereum}. Nie jest to jednak
+  koniecznie jeżeli chcemy zacząć przygodę z tworzeniem smart kontraktów. Serwis
+  Infura\footnote{https://infura.io/} udostępnia za darmo publiczny węzeł który
+  można wykorzystać do komunikacji z siecią Ethereum.
 
-  Funkcje zdefiniowane w smart kontrakcie można podzielić na 2 kategorie. Te
-  które czytają dane i te które je zmieniają. Jako że dostęp do danych z
-  blockchainu jest publiczny i można stworzyć własny węzeł który jest pełną
-  kopią blockchainu, dane można odczytać w każdej chwili. Inaczej jest w
-  przypadku funkcji która modyfikuje stan kontraktu. Wynika to z faktu iż każdy
-  z węzłów musi wywołać tę funkcję aby potwierdzić czy inne węzły również ją
-  wykonały i stan blockchainu się zgadza. Operacja ta nazywana jest ustaleniem
-  konsensusu pomiędzy węzłami. Fakt iż musimy wykonać tę funkcję na wszystkich
-  węzłach powoduje że za jej wywołanie, wołający musi zapłacić. Walutą w
-  której dokonuje się opłaty jest Gas który jest kupowany podczas zlecania
-  wywołania funkcji.
+  Aby utworzyć własny kontrakt w sieci można skorzystać z narzędzia
+  Remix\footnote{https://remix.ethereum.org/}. Jest to edytor w którym można
+  napisać własny kontrakt a następnie z poziomu przeglądarki utworzyć jego kopię
+  na blockchainie. Aby możliwe było utworzenie kontraktu na blockchainie twórca
+  musi musi ponieść koszt utworzenia kontraktu. W przypadku narzędzia Remix oraz
+  innych aplikacji przeglądarkowych wykorzystujących klienta Web3.js można
+  skorzystać z wtyczki do przeglądarki o nazwie
+  Metamask\footnote{https://metamask.io/}.
 
-  Ilość Gasu potrzebnego do wywołania funkcji jest proporcjonalna do złożoności
-  obliczeniowej funkcji. Cena Gasu zależy od aktualnego obciążenia sieci oraz od
-  tego czy chcemy aby nasza funkcja została wywołana jak najszybciej.
+  Technicznie Metamask wstrzykuje do strony globalny obiekt JavaScript o nazwie
+  web3 który jest wykorzystywany do dalszej interakcji z blockchainem. Podczas
+  tworzenia nowego smart kontraktu lub wywoływania funkcji która wymaga zapłaty
+  pojawia się okienko które wymaga potwierdzenia czy chcemy wykonać daną akcję
+  za określoną opłatą.
 
-  Wywołania funkcji, utworzenie smart kontraktu oraz transfer Etheru na inne
-  konto nazywamy transakcją. Wszystkie transakcje trafiają do puli transakcji
-  (ang.  Transaction Pool). Transakcje z puli są akceptowane zaczynając od tych
-  za które jest największa opłata ponieważ te są najbardziej korzystne dla
-  kopaczy odpowiedzialnych za utrzymanie konsensusu.
+\section{Architektura aplikacji}
 
-\subsection{Utworzenie nowego smart kontraktu}
+  Najprostszą architekturą DApp jest klient działający w przeglądarce który
+  komunikuje się bezpośrednio z wybranym węzłem. Inną możliwością jest
+  stworzenie własnego serwera który komunikuje się z węzłem oraz aplikację
+  przeglądarkową komunikującą się tylko z naszym serwerem bez bezpośredniej
+  komunikacji z węzłem. Takie rozwiązanie może być wykorzystane w celu
+  przyspieszenia aplikacji aby nie odpytywać węzeł o dane za każdym razem tylko
+  przechowywać je w pamięci podręcznej na serwerze.
 
-  Aby utworzyć nowy kontrakt należy utworzyć transakcję wraz z 
-  Do tej pory opisałem w jaki sposób komunikować się z istniejącym kontraktem
-  jednak w jaki sposób utworzyć nowy kontrat
+  Innym sposobem na wykorzystanie blockchainu jest wykorzystanie go tylko do
+  przechowywania wartości funkcji skrótu danych które trzymamy w innym miejscu.
+  Takie podejście stosowane jest ze względu na fakt że zapis do blockchainu
+  kosztuje proporcjonalnie do złożoności obliczeniowej wywoływanej funkcji a w
+  przypadku zapisu wartości funkcji skrótu koszt jest stały oraz nie zależy od
+  ilości danych z których powstał skrót. Blockchain w takim przypadku służy
+  tylko do weryfikacji czy dane które odczytujemy zgadzają się z danymi które
+  zostały "podpisane" poprzez zapisanie ich skrótu na blockchainie.
 
 \section{Bezpieczeństwo}
 
@@ -230,7 +261,7 @@
   klucz szyfrujący zostanie przejęty przez atakującego możemy mówić o wycieku
   danych.
 
-  Dodatkowo jak wspomniałem w rozdziale TODO, DApp może wykorzystywać tradycyjne
+  Dodatkowo jak wspomniałem w rozdziale 5, DApp może wykorzystywać tradycyjne
   bazy danych takie jak relacyjne czy NoSQL. W takim przypadku twórcy aplikacji
   muszą brać pod uwagę zarówno niebezpieczeństwa związane z wykorzystaniem
   wybranej bazy danych jak i te wynikające z użycia blockchainu które omówię w
