@@ -29,12 +29,174 @@
 
 \begin{abstract}
 
-  Opis zdecentralizowanej aplikacji zbudowanej zbudowanej na platformie Ethereum
-  z wykorzystaniem smart kontraktów Ethereum\cite{ethereum}. Na koniec przestawię
-  potencjalne luki które mogły
-  \keywords{Smart kontract \and Blockchain \and DApp}
+  Opis smart kontraktów zdefiniowanych na platformie Ethereum. Przykład
+  wykorzystania Ethereum do zrealizowania zdecentralizowanego systemu do
+  głosowania. Koniec artykułu zostanie poświęcony poszczególnym zagrożeniom
+  wynikającym z wykorzystania smart kontraktów wraz z konsekwencjami ich
+  przeoczenia
+
+  \keywords{Ethereum \and Smart kontrakt \and Blockchain \and Decentralized Application \and DApp}
 
 \end{abstract}
+
+\section{Ethereum}
+
+  Ethereum\cite{ethereum} jest zdecentralizowaną platformą dla aplikacji które
+  działają dokładnie tak jak zostały zdefiniowane bez możliwości oszustwa,
+  cenzury czy interwencji stron trzecich stworzoną przez rosyjskiego programistę
+  nazywającego się Vitalik Buterin. Ether jest kryptowalutą wykorzystywaną na
+  platformie Ethereum i pod względem wartości rynkowej jest drugą co do
+  wielkości kryptowalutą na świecie. Na pierwszym miejscu plasuje się
+  Bitcoin\footnote{Według serwisu \url{https://coinmarketcap.com/}, stan na
+  2.06.2018}.
+
+  To co wyróżnia Ethereum na tle Bitcoina to fakt iż pozwala on na definiowanie
+  smart kontraktów. To z kolei umożliwia tworzenie nowego rodzaju aplikacji
+  nazywanych DApp, czyli Decentralized Application, co w wolnym tłumaczeniu z
+  języka angielskiego oznacza "zdecentralizowana aplikacja". Nazwane są tak
+  ponieważ architektura blockchainu jest zdecentralizowana a smart kontrakt
+  można traktować jako bazę danych w której przechowywane są dane aplikacji.
+
+\section{Smart kontrakt}
+
+  Smart kontrakt jest kolejnym etapem rozwoju technologii blockchain. Można
+  znaleźć tłumaczenia które opisują smart kontrakt jako cyfrowy zapis umowy
+  która w odpowiednich warunkach zrealizuje ustaloną akcję. Z technicznego
+  punktu widzenia jest to zbiór danych oraz funkcje które mogą na nich operować
+  i których wywołania są jedynym sposobem na zmianę tych danych. Dodatkowo smart
+  kontrakt może przechowywać Ether który jest kryptowalutą wykorzystywaną w
+  Ethereum. Dzięki temu wraz z wywołaniem funkcji kontraktu, wołający funkcję
+  może przekazać Ether którym dysponuje jeżeli kontrakt tego wymaga. Ma to
+  miejsce na przykład w grach hazardowych gdzie aby wywołać funkcję losu należy
+  przekazać ustaloną kwotę Etheru. Smart kontrakty definiuje się przy użyciu
+  języka Solidity\cite{solidity}
+
+  Istotną cechą która wynika z architektury blockchainu jest fakt iż smart
+  kontrakt który został utworzony na blockchainie nie może zostać zmieniony.
+  Jest to bardzo istotne ze względu na bezpieczeństwo tworzonej aplikacji.
+  Jeżeli popełnimy błąd w definicji kontraktu nie mamy możliwości jego naprawy.
+  Jedyne co można zrobić to utworzyć nowy kontakt i zaprzestać korzystania z
+  jego starej wersji. Takie rozwiązanie nie zawsze jest satysfakcjonujące,
+  szczególnie jeżeli do starej wersji kontraktu przypisana jest dana ilość
+  Etheru a nie utworzyliśmy funkcji która pozwala na jego przekazanie na
+  określone konto. Z drugiej strony istnienie funkcji która pozwala na wybranie
+  całego Etheru z kontraktu może wzbudzić podejrzenia co do intencji jego
+  twórcy.
+
+\subsection{System do głosowania}
+
+  Przykładem smart kontraktu może być system do tajnego głosowania. Organizator
+  głosowania tworzy umowę z osobami uprawnionymi do głosowania która pozwala
+  Każdej z osób na oddanie dokładnie jednego głosu. Następnie, po zamknięciu
+  głosowania, opcja która zebrała najwięcej głosów zostaje zwycięzcą głosowania.
+
+  Zastanówmy się najpierw jakie są problemy w organizowaniu głosowania bez smart
+  kontraktów. Przede wszystkim należy zadbać o to aby głos mogły oddać tylko
+  osoby do tego upoważnione oraz aby każda z tych osób mogła oddać tylko jeden
+  głos. Kolejnym problemem jest sposób w jaki głosy są liczone. Jak powiedział
+  Józef Stalin: "Nieważne, kto głosuje, ważne, kto liczy głosy."
+
+  Powyższe problemy w przypadku głosowań w Polsce rozwiązane są przez Państwową
+  Komisję Wyborczą która pilnuje porządku głosowania. Tworzone są okręgowe
+  komisje wyborcze których odpowiedzialnością jest sprawdzenie czy osoba
+  głosująca jest do tego uprawiona. Następnie komisja skrutacyjna liczy głosy po
+  czym ogłaszany jest wynik głosowania.
+
+  Takie rozwiązanie wymaga istnienia tak zwanej zaufanej trzeciej strony. W
+  przypadku wyborów w Polsce jest to PKW. Obywatele muszą zaufać że w poprawny
+  sposób i bez błędu komisja policzy głosy i ogłosi zwycięzcę. Nie raz pojawiały
+  się różnego rodzaju kontrowersje co do sposobu przeprowadzania wyborów.  Na
+  przykład podczas wyborów samorządowych 2014 opóźnione było ogłoszenie wyników.
+  PKW tłumaczyła to awarią systemów informacyjnych jednak co bardziej
+  podejrzliwi obywatele wyczuwali w tym spisek. Dodatkowo obywatele muszą ufać
+  że żadna z okręgowych komisji wyborczych nie nadużyje swoich kompetencji i nie
+  wykorzystają kart do głosowania które nie zostały pobrane przez uprawionych do
+  głosowania obywateli.
+
+  W przypadku głosowania zrealizowanego na smart kontraktach nie ma potrzeby
+  istnienia zaufanej trzeciej strony. Można zdefiniować kontrakt którego
+  definicja jest ogólnie dostępna i każdy może sprawdzić w jaki sposób działa.
+  Wymaganie iż każdy z uprawionych może zagłosować tylko jeden raz można
+  zrealizować poprzez przekazanie każdemu z uprawionych jednego tokenu do
+  głosowania który nie może być przekazany nikomu innemu. Osoba która
+  wykorzystuje swój token do zagłosowania wywołuje odpowiednią funkcję na
+  kontrakcie do głosowania w efekcie czego liczba głosów na daną opcję zwiększa
+  się. W każdej chwili można sprawdzić jaki jest aktualny stan głosowania, po
+  jego zakończeniu wystarczy wywołać tę funkcję i ogłosić wyniki.
+
+  Jedną z zalet realizacji systemu głosowania opartego na blockchainie jest jego
+  transparentność. Ponieważ dane zapisane na blockchainie są publicznie dostępne
+  do odczytu każdy z zainteresowany może sprawdzić jak przebiegało głosowanie
+  oraz jaki jest jego aktualny stan. Ponadto technologia blockchain gwarantuje
+  że dane zapisane do blockchainu nie zostaną zmienione więc nie ma mowy o
+  fałszowaniu wyników.
+
+\section{Token}
+
+  Tokenem w świecie Ethereum nazywamy nową "kryptowalutę" która istnieje na
+  blockchainie Ethereum. Istnieje przyjęty interfejs tokenu o nazwie `ERC20`
+  który definiuje token o określonej liczbie gdzie każdy z tokenów jest
+  równoważmy innemu.
+
+  Tokeny mogą być wykorzystane do zbiórki pieniędzy co jest nazywane ICO
+  (Initial Coin Offering) i jest odpowiednikiem określenia IOP (Initial Public
+  Offering) znanego giełd papierów wartościowych. Przypuśćmy że właściciel
+  startupu potrzebuje dofinansowania do swojego biznesu. Może on utworzyć token
+  o dowolnej nazwie i totalnej liczbie tokenów. Następnie sprzedawać je za
+  Ether. W ten sposób twórca pozyskuje Ether którym może płacić lub wymienić na
+  inną walutę. W zależności od przyjętej polityki ICO, Kupujący token otrzymuje
+  udziały w startupie lub możliwość wykorzystania tokenu w zamian za usługę
+  realizowaną przez biznes twórcy tokenu.
+
+  Za przykład może posłużyć serwis aukcyjny w którym za wystawienie produktu
+  należy zapłacić tokenem. Ci którzy kupili token podczas ICO zorganizowanego
+  przed uruchomieniem serwisu, mogą go teraz wykorzystać lub sprzedać go innym
+  którzy chcą wystawić przedmiot na tym serwisie.
+
+\section{Komunikacja z siecią Ethereum}
+
+  Sieć Ethereum składa się z węzłów które komunikują się ze sobą aby ustalić
+  wspólną wersję blockchainu. Węzeł to serwer który posiada lokalną kopię
+  blockchainu od początku jego istnienia wraz ze wszystkimi transakcjami i smart
+  kontraktami które zostały na nim zapisane. Dodatkowo węzeł implementuje
+  protokół JSON-RPC poprzez który następuje komunikacja klienta z węzłem.
+  Jednym z bardziej znanych klientów jest klient napisany w języku JavaScript o
+  nazwie Web3.js\footnote{https://github.com/ethereum/web3.js/}. Wykorzystując
+  go można stworzyć aplikację działającą w przeglądarce która komunikuje się
+  bezpośrednio z węzłem Ethereum.
+
+  Inną możliwością jest stworzenie własnego serwera który komunikuje sie z
+  węzłem. Następnie aplikacja webowa komunikuje się tylko z naszym serwerem bez
+  bezpośredniej komunikacji z węzłem. Takie rozwiązanie może być wykorzystane w
+  celu przyspieszenia aplikacji aby nie odpytywać węzeł o dane za każdym razem
+  tylko przechowywać je w pamięci podręcznej na serwerze.
+
+  Funkcje zdefiniowane w smart kontrakcie można podzielić na 2 kategorie. Te
+  które czytają dane i te które je zmieniają. Jako że dostęp do danych z
+  blockchainu jest publiczny i można stworzyć własny węzeł który jest pełną
+  kopią blockchainu, dane można odczytać w każdej chwili. Inaczej jest w
+  przypadku funkcji która modyfikuje stan kontraktu. Wynika to z faktu iż każdy
+  z węzłów musi wywołać tę funkcję aby potwierdzić czy inne węzły również ją
+  wykonały i stan blockchainu się zgadza. Operacja ta nazywana jest ustaleniem
+  konsensusu pomiędzy węzłami. Fakt iż musimy wywołać tą funkcję na wszystkich
+  węzłach powoduje że za wywołanie tej funkcji wywołujący musi zapłacić. Walutą
+  w której płaci się za moc obliczeniową węzłów w sieci Ethereum jest Gas który
+  kupujemy za Ether.
+
+  Ilość Gasu potrzebnego do wywołania funckji jest proporcjonalna do jej
+  złożoności obliczeniowej. Cena Gasu zależy od aktualnego obciążenia sieci oraz
+  od tego czy chcemy aby nasza funkcja wywołała się jak najszybciej czy nie.
+  Wywołania funkcji, utworzenie smart kontraktu oraz transfer Etheru na inne
+  konto nazywamy transakcją. Wszystkie transakcje trafiają do puli transakcji
+  (ang. Transaction Pool). Transakcje z puli są akceptowane zaczynając od tych
+  za które jest ustalona największa nagroda  Gas Z puli brane są kolejne
+  transakcje zaczynając od tych które z największą opłatą ponieważ te są
+  najbardziej korzystne dla kopaczy odpowiedzialnych za utrzymanie konsensusu.
+
+  Musimy jednak przyjąć że wywołanie funkcji na
+  każdym z węzłów w sieci nie może być za darmo.
+
+  \url{http://www.ethdocs.org/en/latest/}
 
 \section{Bezpieczeństwo}
 
@@ -63,7 +225,7 @@
   rękach danie dane mogą stwarzać realne niebezpieczeństwo dla dzieci które
   ogranicza tylko wyobraźnia atakującego.
 
-  Wykorzystanie technologii Blockchain pozwala ograniczyć wymienione powyżej
+  Wykorzystanie technologii blockchain pozwala ograniczyć wymienione powyżej
   zagrożenia ponieważ usunięcie danych z blockchainu jest niemożliwe. Ciężko
   też mówić o wycieku danych ponieważ dane zapisane na blockchainie są
   publicznie dostępne. Oczywiście jeżeli chcemy przechowywać dane wrażliwe na
@@ -78,7 +240,23 @@
   wybranej bazy danych jak i te wynikające z użycia blockchainu które omówię w
   kolejnych podrozdziałach.
 
-\subsection{Second Section}
+  TODO
+  \cite{open-zeppelin}
+
+\subsection{Generowanie liczb pseudolosowych}
+
+\cite{liczby-losowe}
+
+\section{Podsumowanie}
+
+  Podsumowując, system do głosowania wykorzystujący blockchain nie wymaga
+  istnienia zaufanej trzeciej strony co jest główną ideą przyświecającą smart
+  kontraktom. Dzięki spisaniu zasad umowy w sposób jednoznaczny w interpretacji
+  oraz gwarancji wykonania danych akcji po spełnieniu wcześniej przyjętych
+  warunków możemy zawrzeć umowę z kimś komu nie musimy ufać bez potrzeby
+  pośrednika w postaci notariusza.
+
+
 \subsubsection{Third Section}
 \paragraph{Fourth Level}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -93,9 +271,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 % \bibliographystyle{splncs04}
 % \bibliography{mybibliography}
 %
-\begin{thebibliography}{8}
+\begin{thebibliography}{splncs04}
   \bibitem{ethereum} Ethereum Homepage,
   \url{https://www.ethereum.org/}
+
+  \bibitem{solidity} Solidity - dokumentacj
+  \url{https://solidity.readthedocs.io/en/v0.4.24/}
 
   \bibitem{nazwa-pl-utrata-danych} Awaria w Nazwa.pl – klienci stracili dane, także z backupów,
   \url{https://niebezpiecznik.pl/post/awaria-w-nazwa-pl-klienci-stracili-dane-takze-z-backupow/}
@@ -112,14 +293,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   \bibitem{dane-dzieci} Jak pozyskać dane osobowe i adresy dzieci z twojej okolicy?
   \url{https://niebezpiecznik.pl/post/jak-pozyskac-dane-osobowe-i-adresy-dzieci-z-twojej-okolicy/}
 
-  \bibitem{blad-uzytkownika} Jak przejąć czyjeś konto na Twitterze nie znając hasła?
-  \url{https://niebezpiecznik.pl/post/jak-przejac-czyjes-konto-na-twitterze-nie-znajac-hasla/}
+  \bibitem{liczby-losowe} Predicting Random Numbers in Ethereum Smart Contracts
+  \url{https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620}
 
-  \bibitem{sql-injection} SQL injection
-  \url{https://pl.wikipedia.org/wiki/SQL_injection}
+  \bibitem{open-zeppelin} OpenZeppelin
+  \url{https://github.com/OpenZeppelin/zeppelin-solidity}
 
 \end{thebibliography}
-
 
 
 % ########## START OF SAMPLES
