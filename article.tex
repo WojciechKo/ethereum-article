@@ -9,8 +9,8 @@
 % \renewcommand\UrlFont{\color{blue}\rmfamily}
 
 % Display polish characters
-\usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{polski}
 \usepackage{url}
 
 % Translate some names to polish
@@ -41,95 +41,94 @@
 
 \section{Ethereum}
 
-  Ethereum\cite{ethereum} jest zdecentralizowaną platformą dla aplikacji które
-  działają dokładnie tak jak zostały zdefiniowane bez możliwości oszustwa,
-  cenzury czy interwencji stron trzecich stworzoną przez rosyjskiego programistę
-  nazywającego się Vitalik Buterin. Ether jest kryptowalutą wykorzystywaną na
-  platformie Ethereum i pod względem wartości rynkowej jest drugą co do
-  wielkości kryptowalutą na świecie. Na pierwszym miejscu plasuje się
-  Bitcoin\footnote{Według serwisu \url{https://coinmarketcap.com/}, stan na
+  Ethereum jest zdecentralizowaną platformą dla aplikacji które działają
+  dokładnie tak jak zostały zdefiniowane bez możliwości oszustwa, cenzury czy
+  interwencji stron trzecich\cite{ethereum}. Została stworzona przez rosyjskiego
+  programistę nazywającego się Vitalik Buterin.
+
+  Ether jest kryptowalutą wykorzystywaną na platformie Ethereum. Pod względem
+  wartości rynkowej jest drugą co do wielkości kryptowalutą na świecie, zaraz po
+  Bitcoinie\footnote{Według serwisu \url{https://coinmarketcap.com/}, stan na
   2.06.2018}.
 
   To co wyróżnia Ethereum na tle Bitcoina to fakt iż pozwala on na definiowanie
   smart kontraktów. To z kolei umożliwia tworzenie nowego rodzaju aplikacji
   nazywanych DApp, czyli Decentralized Application, co w wolnym tłumaczeniu z
-  języka angielskiego oznacza "zdecentralizowana aplikacja". Nazwane są tak
-  ponieważ architektura blockchainu jest zdecentralizowana a smart kontrakt
-  można traktować jako bazę danych w której przechowywane są dane aplikacji.
+  języka angielskiego oznacza "zdecentralizowana aplikacja". Są to aplikacje
+  które wykorzystują smart kontrakty, lub bardziej ogólnie blockchain, jako
+  miejsce do przechowywania danych aplikacji.
 
 \section{Smart kontrakt}
 
   Smart kontrakt jest kolejnym etapem rozwoju technologii blockchain. Można
   znaleźć tłumaczenia które opisują smart kontrakt jako cyfrowy zapis umowy
-  która w odpowiednich warunkach zrealizuje ustaloną akcję. Z technicznego
-  punktu widzenia jest to zbiór danych oraz funkcje które mogą na nich operować
-  i których wywołania są jedynym sposobem na zmianę tych danych. Dodatkowo smart
-  kontrakt może przechowywać Ether który jest kryptowalutą wykorzystywaną w
-  Ethereum. Dzięki temu wraz z wywołaniem funkcji kontraktu, wołający funkcję
-  może przekazać Ether którym dysponuje jeżeli kontrakt tego wymaga. Ma to
-  miejsce na przykład w grach hazardowych gdzie aby wywołać funkcję losu należy
-  przekazać ustaloną kwotę Etheru. Smart kontrakty definiuje się przy użyciu
-  języka Solidity\cite{solidity}
+  która w odpowiednich warunkach realizuje ustaloną akcję. Z technicznego punktu
+  widzenia jest to zbiór danych oraz funkcji które mogą operować na danych i są
+  jedynym sposobem na ich zmianę. Wywołania niektórych funkcji wymagają
+  przekazania Etheru który może być przechowywany w smart kontrakcie jak w
+  zwykłym portfelu lub być przekazanym dalej wraz z wywołaniem innej funkcji. Ma
+  to miejsce na przykład w grach hazardowych gdzie aby wywołać funkcję losu
+  należy przekazać ustaloną kwotę Etheru jako opłatę za los. W Ethereum smark
+  kontrakty definiuje się wykorzystując język Solidity\cite{solidity}
 
   Istotną cechą która wynika z architektury blockchainu jest fakt iż smart
   kontrakt który został utworzony na blockchainie nie może zostać zmieniony.
   Jest to bardzo istotne ze względu na bezpieczeństwo tworzonej aplikacji.
-  Jeżeli popełnimy błąd w definicji kontraktu nie mamy możliwości jego naprawy.
+  Jeżeli popełnimy błąd w definicji kontraktu nie ma możliwości jego naprawy.
   Jedyne co można zrobić to utworzyć nowy kontakt i zaprzestać korzystania z
   jego starej wersji. Takie rozwiązanie nie zawsze jest satysfakcjonujące,
-  szczególnie jeżeli do starej wersji kontraktu przypisana jest dana ilość
-  Etheru a nie utworzyliśmy funkcji która pozwala na jego przekazanie na
-  określone konto. Z drugiej strony istnienie funkcji która pozwala na wybranie
-  całego Etheru z kontraktu może wzbudzić podejrzenia co do intencji jego
-  twórcy.
+  szczególnie jeżeli do starej wersji kontraktu przypisany jest Ether a nie
+  utworzyliśmy funkcji która pozwala na jego przekazanie do innego portfela. Z
+  drugiej strony istnienie funkcji która pozwala na wybranie całego Etheru z
+  kontraktu może wzbudzić podejrzenia co do intencji jego twórcy.
 
 \subsection{System do głosowania}
 
-  Przykładem smart kontraktu może być system do tajnego głosowania. Organizator
-  głosowania tworzy umowę z osobami uprawnionymi do głosowania która pozwala
-  Każdej z osób na oddanie dokładnie jednego głosu. Następnie, po zamknięciu
-  głosowania, opcja która zebrała najwięcej głosów zostaje zwycięzcą głosowania.
+  Smart kontrakty mogą zostać wykorzystane do zbudowania systemu do tajnego
+  głosowania. Organizator głosowania tworzy umowę z osobami uprawnionymi do
+  głosowania która pozwala uprawnionym na oddanie dokładnie jednego głosu.
+  Następnie, po zamknięciu głosowania, opcja która zebrała najwięcej głosów
+  zostaje zwycięzcą głosowania.
 
   Zastanówmy się najpierw jakie są problemy w organizowaniu głosowania bez smart
-  kontraktów. Przede wszystkim należy zadbać o to aby głos mogły oddać tylko
-  osoby do tego upoważnione oraz aby każda z tych osób mogła oddać tylko jeden
+  kontraktów. Przede wszystkim należy zadbać o to aby głos mogła oddać tylko
+  osoba do tego upoważniona oraz aby każda z tych osób mogła oddać tylko jeden
   głos. Kolejnym problemem jest sposób w jaki głosy są liczone. Jak powiedział
   Józef Stalin: "Nieważne, kto głosuje, ważne, kto liczy głosy."
 
-  Powyższe problemy w przypadku głosowań w Polsce rozwiązane są przez Państwową
-  Komisję Wyborczą która pilnuje porządku głosowania. Tworzone są okręgowe
-  komisje wyborcze których odpowiedzialnością jest sprawdzenie czy osoba
-  głosująca jest do tego uprawiona. Następnie komisja skrutacyjna liczy głosy po
-  czym ogłaszany jest wynik głosowania.
+  Powyższe problemy w przypadku głosowań w Polsce rozwiązywane są przez
+  Państwową Komisję Wyborczą która organizuje i pilnuje porządku głosowania.
+  Tworzone są okręgowe komisje wyborcze których odpowiedzialnością jest
+  kontrolowanie czy osoba oddająca głos jest do tego uprawiona. Następnie
+  komisja skrutacyjna liczy głosy po czym ogłaszany jest wynik głosowania.
 
-  Takie rozwiązanie wymaga istnienia tak zwanej zaufanej trzeciej strony. W
-  przypadku wyborów w Polsce jest to PKW. Obywatele muszą zaufać że w poprawny
-  sposób i bez błędu komisja policzy głosy i ogłosi zwycięzcę. Nie raz pojawiały
-  się różnego rodzaju kontrowersje co do sposobu przeprowadzania wyborów.  Na
-  przykład podczas wyborów samorządowych 2014 opóźnione było ogłoszenie wyników.
-  PKW tłumaczyła to awarią systemów informacyjnych jednak co bardziej
-  podejrzliwi obywatele wyczuwali w tym spisek. Dodatkowo obywatele muszą ufać
-  że żadna z okręgowych komisji wyborczych nie nadużyje swoich kompetencji i nie
-  wykorzystają kart do głosowania które nie zostały pobrane przez uprawionych do
-  głosowania obywateli.
+  Takie rozwiązanie wymaga istnienia tak zwanej "zaufanej trzeciej strony". W
+  przypadku wyborów w Polsce jest to PKW. Obywatele muszą zaufać że komisja w
+  poprawny sposób zorganizuje i przeprowadzi głosowanie a następnie bezbłędni
+  policzy głosy i ogłosi zwycięzcę.  Nie raz pojawiały się różnego rodzaju
+  kontrowersje co do sposobu przeprowadzania wyborów. Na przykład podczas
+  wyborów samorządowych 2014 opóźnione było ogłoszenie wyników.  PKW tłumaczyła
+  to awarią systemów informacyjnych jednak co bardziej podejrzliwi obywatele
+  wyczuwali w tym spisek. Dodatkowo obywatele muszą ufać że każda z okręgowych
+  komisji wyborczych będzie przestrzegać prawa i nie nadużyje swoich kompetencji
+  aby sfałszować organizowane wybory.
 
   W przypadku głosowania zrealizowanego na smart kontraktach nie ma potrzeby
   istnienia zaufanej trzeciej strony. Można zdefiniować kontrakt którego
-  definicja jest ogólnie dostępna i każdy może sprawdzić w jaki sposób działa.
-  Wymaganie iż każdy z uprawionych może zagłosować tylko jeden raz można
-  zrealizować poprzez przekazanie każdemu z uprawionych jednego tokenu do
-  głosowania który nie może być przekazany nikomu innemu. Osoba która
-  wykorzystuje swój token do zagłosowania wywołuje odpowiednią funkcję na
-  kontrakcie do głosowania w efekcie czego liczba głosów na daną opcję zwiększa
-  się. W każdej chwili można sprawdzić jaki jest aktualny stan głosowania, po
-  jego zakończeniu wystarczy wywołać tę funkcję i ogłosić wyniki.
+  definicja jest publicznie dostępna i każdy może sprawdzić w jaki sposób
+  zbierane są głosy oraz jak są one zliczane. Wymaganie aby każdy z uprawionych
+  mógł zagłosować tylko jeden raz można zrealizować poprzez przekazanie każdemu
+  uprawnionemu jednego tokenu do głosowania który nie może być przekazany dalej.
+  Osoba która wykorzystuje swój token do zagłosowania wywołuje odpowiednią
+  funkcję na kontrakcie do głosowania w efekcie czego liczba głosów na wybraną
+  opcję zwiększa się.
 
-  Jedną z zalet realizacji systemu głosowania opartego na blockchainie jest jego
-  transparentność. Ponieważ dane zapisane na blockchainie są publicznie dostępne
-  do odczytu każdy z zainteresowany może sprawdzić jak przebiegało głosowanie
-  oraz jaki jest jego aktualny stan. Ponadto technologia blockchain gwarantuje
-  że dane zapisane do blockchainu nie zostaną zmienione więc nie ma mowy o
-  fałszowaniu wyników.
+  Jedną z głównych zalet realizacji systemu głosowania opartego na blockchainie
+  jest jego transparentność. Ponieważ dane zapisane na blockchainie są
+  publicznie dostępne do odczytu każdy z zainteresowany może sprawdzić jak
+  przebiegało głosowanie oraz jaki jest jego aktualny stan. Ponadto technologia
+  blockchain gwarantuje że dane zapisane w blockchainie nie zostaną zmienione
+  więc nie ma możliwości fałszowania wyników.
 
 \section{Token}
 
@@ -155,7 +154,7 @@
 
 \section{Komunikacja z siecią Ethereum}
 
-  Sieć Ethereum składa się z węzłów które komunikują się ze sobą aby ustalić
+  Sieć Ethereum\cite{ethereum-doc} składa się z węzłów które komunikują się ze sobą aby ustalić
   wspólną wersję blockchainu. Węzeł to serwer który posiada lokalną kopię
   blockchainu od początku jego istnienia wraz ze wszystkimi transakcjami i smart
   kontraktami które zostały na nim zapisane. Dodatkowo węzeł implementuje
@@ -166,10 +165,10 @@
   bezpośrednio z węzłem Ethereum.
 
   Inną możliwością jest stworzenie własnego serwera który komunikuje sie z
-  węzłem. Następnie aplikacja webowa komunikuje się tylko z naszym serwerem bez
-  bezpośredniej komunikacji z węzłem. Takie rozwiązanie może być wykorzystane w
-  celu przyspieszenia aplikacji aby nie odpytywać węzeł o dane za każdym razem
-  tylko przechowywać je w pamięci podręcznej na serwerze.
+  węzłem. Następnie aplikacja przeglądarkowa komunikuje się tylko z naszym
+  serwerem bez bezpośredniej komunikacji z węzłem. Takie rozwiązanie może być
+  wykorzystane w celu przyspieszenia aplikacji aby nie odpytywać węzeł o dane za
+  każdym razem tylko przechowywać je w pamięci podręcznej na serwerze.
 
   Funkcje zdefiniowane w smart kontrakcie można podzielić na 2 kategorie. Te
   które czytają dane i te które je zmieniają. Jako że dostęp do danych z
@@ -178,25 +177,26 @@
   przypadku funkcji która modyfikuje stan kontraktu. Wynika to z faktu iż każdy
   z węzłów musi wywołać tę funkcję aby potwierdzić czy inne węzły również ją
   wykonały i stan blockchainu się zgadza. Operacja ta nazywana jest ustaleniem
-  konsensusu pomiędzy węzłami. Fakt iż musimy wywołać tą funkcję na wszystkich
-  węzłach powoduje że za wywołanie tej funkcji wywołujący musi zapłacić. Walutą
-  w której płaci się za moc obliczeniową węzłów w sieci Ethereum jest Gas który
-  kupujemy za Ether.
+  konsensusu pomiędzy węzłami. Fakt iż musimy wykonać tę funkcję na wszystkich
+  węzłach powoduje że za jej wywołanie, wołający musi zapłacić. Walutą w
+  której dokonuje się opłaty jest Gas który jest kupowany podczas zlecania
+  wywołania funkcji.
 
-  Ilość Gasu potrzebnego do wywołania funckji jest proporcjonalna do jej
-  złożoności obliczeniowej. Cena Gasu zależy od aktualnego obciążenia sieci oraz
-  od tego czy chcemy aby nasza funkcja wywołała się jak najszybciej czy nie.
+  Ilość Gasu potrzebnego do wywołania funkcji jest proporcjonalna do złożoności
+  obliczeniowej funkcji. Cena Gasu zależy od aktualnego obciążenia sieci oraz od
+  tego czy chcemy aby nasza funkcja została wywołana jak najszybciej.
+
   Wywołania funkcji, utworzenie smart kontraktu oraz transfer Etheru na inne
   konto nazywamy transakcją. Wszystkie transakcje trafiają do puli transakcji
-  (ang. Transaction Pool). Transakcje z puli są akceptowane zaczynając od tych
-  za które jest ustalona największa nagroda  Gas Z puli brane są kolejne
-  transakcje zaczynając od tych które z największą opłatą ponieważ te są
-  najbardziej korzystne dla kopaczy odpowiedzialnych za utrzymanie konsensusu.
+  (ang.  Transaction Pool). Transakcje z puli są akceptowane zaczynając od tych
+  za które jest największa opłata ponieważ te są najbardziej korzystne dla
+  kopaczy odpowiedzialnych za utrzymanie konsensusu.
 
-  Musimy jednak przyjąć że wywołanie funkcji na
-  każdym z węzłów w sieci nie może być za darmo.
+\subsection{Utworzenie nowego smart kontraktu}
 
-  \url{http://www.ethdocs.org/en/latest/}
+  Aby utworzyć nowy kontrakt należy utworzyć transakcję wraz z 
+  Do tej pory opisałem w jaki sposób komunikować się z istniejącym kontraktem
+  jednak w jaki sposób utworzyć nowy kontrat
 
 \section{Bezpieczeństwo}
 
@@ -274,6 +274,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 \begin{thebibliography}{splncs04}
   \bibitem{ethereum} Ethereum Homepage,
   \url{https://www.ethereum.org/}
+
+  \bibitem{ethereum-doc} Ethereum Homestead
+  \url{http://www.ethdocs.org/en/latest/}
+
 
   \bibitem{solidity} Solidity - dokumentacj
   \url{https://solidity.readthedocs.io/en/v0.4.24/}
