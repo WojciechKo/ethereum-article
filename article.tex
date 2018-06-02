@@ -264,24 +264,40 @@
   Dodatkowo jak wspomniałem w rozdziale 5, DApp może wykorzystywać tradycyjne
   bazy danych takie jak relacyjne czy NoSQL. W takim przypadku twórcy aplikacji
   muszą brać pod uwagę zarówno niebezpieczeństwa związane z wykorzystaniem
-  wybranej bazy danych jak i te wynikające z użycia blockchainu które omówię w
-  kolejnych podrozdziałach.
+  wybranej bazy danych jak i te wynikające z użycia blockchainu.
 
-  TODO
-  \cite{open-zeppelin}
+  W celu wykorzystania sprawdzonych rozwiązań na problemy które często się
+  powtarzają podczas projektowania smart kontraktów warto skorzystać ze zbioru
+  OpenZeppelin\footnote{https://github.com/OpenZeppelin/zeppelin-solidity}.
+  Można znaleźć tam gotowe smart kontrakty lub funkcje które rozwiązują dane
+  problemy bezpieczeństwa w sprawdzony przez społecznośc Ethereum sposób.
+  Przykładem może być chęć ograniczenia możliwości wywołania niektórych funkcji
+  tylko do autora danego smart kontraktu. Jedną z takich funkcji może być
+  wspomniana wcześniej funkcja służąca do wybrania Etheru który jest
+  przechowywany na smart kontrakcie.
 
-\subsection{Generowanie liczb pseudolosowych}
+% \subsection{Generowanie liczb pseudolosowych}
 
-\cite{liczby-losowe}
+% \cite{liczby-losowe}
 
 \section{Podsumowanie}
 
-  Podsumowując, system do głosowania wykorzystujący blockchain nie wymaga
-  istnienia zaufanej trzeciej strony co jest główną ideą przyświecającą smart
-  kontraktom. Dzięki spisaniu zasad umowy w sposób jednoznaczny w interpretacji
+  W mojej opinii technologia blockchain spowoduje rewolucję w sposobie pracy
+  instytucj zajmującymi się obrotem walutami na miarę rewolucji którą spowodował
+  internet w obszarze wymiany informacji. Wiele z instytucji finansowych można
+  zastąpić poprzed zdefiniowane smart kontraktu który zawsze działa tak samo i
+  nie popełnia błędów. Instytucją która jako pierwsza została pozbawiona sensu
+  istnienia jest giełda. Większośc giełd kryptowalut działa w oparciu o smart
+  kontrakty. Dzięki temu mamy pewność że giełda działa za każdym razem tak samo
+  i nie popełni błędu który może wynikać ze zwykłej pomyłki jak i celowego
+  oszustwa.
+
+  Wykorzystanie smart kontraktów pozwala na wyeliminowanie wymagania istnienia
+  zaufanej trzeciej strony co jest główną ideą przyświecającą ich twórcy. Dzięki
+  spisaniu zasad transferu waluty w sposób jednoznaczny w interpretacji sposób
   oraz gwarancji wykonania danych akcji po spełnieniu wcześniej przyjętych
-  warunków możemy zawrzeć umowę z kimś komu nie musimy ufać bez potrzeby
-  pośrednika w postaci notariusza.
+  warunków możemy zawrzeć umowę z kimś komu nie ufamy bez potrzeby pośrednika w
+  postaci notariusza.
 
 %
 % ---- Bibliography ----
