@@ -13,8 +13,12 @@
 \usepackage{polski}
 \usepackage{url}
 
+\usepackage[language=polish, sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+
 % Translate some names to polish
 \def\keywordname{{\bf Słowa Kluczowe:}}
+
 
 \usepackage{letltxmacro}
 \LetLtxMacro{\oldcite}{\cite}
@@ -54,7 +58,7 @@
 
   Ethereum jest zdecentralizowaną platformą dla aplikacji, które działają
   dokładnie tak jak zostały zdefiniowane bez możliwości oszustwa, cenzury czy
-  interwencji stron trzecich\cite{ethereum}. Platforma została uruchomiona
+  interwencji stron trzecich.\footnote{https://www.ethereum.org} Platforma została uruchomiona
   30~lipca~2015 przez rosyjskiego programistę nazywającego się Vitalik Buterin i
   jej główną funkcjonalnością jest możliwość definiowana smart kontraktów.
 
@@ -80,7 +84,7 @@
   angielskim "zdecentralizowana aplikacja". Są to aplikacje, które wykorzystują
   smart kontrakty, lub bardziej ogólnie blockchain, jako miejsce do
   przechowywania kodu i danych aplikacji. W Ethereum smart kontrakty definiuje
-  się wykorzystując język Solidity\cite{solidity}.
+  się wykorzystując język Solidity\cite{solidity-doc}.
 
   Wywołania niektórych funkcji wymagają przekazania Etheru, który może być
   przechowywany w smart kontrakcie jak w zwykłym portfelu lub być przekazanym
@@ -99,7 +103,7 @@
   drugiej strony istnienie funkcji, która pozwala na wybranie całego Etheru z
   kontraktu może wzbudzić podejrzenia co do intencji jego twórcy.
 
-  Funkcje zdefiniowane w smart kontrakcie można podzielić na 2 kategorie. Te,
+  Funkcje zdefiniowane w smart kontrakcie można podzielić na dwie kategorie. Te,
   które czytają dane i te, które je zmieniają. Jako że dostęp do danych z
   blockchainu jest publiczny i można stworzyć własny węzeł, który jest pełną
   kopią blockchainu, dane można odczytać w każdej chwili. Inaczej jest w
@@ -126,7 +130,7 @@
   tak, że kopacze będą wybierać bardziej korzystne dla nich transakcje powodując
   że transakcja może znajdować się w puli transakcji przez bardzo długi
   czas.\footnote{\url{https://ethgasstation.info/} – serwis estymujący opłatę za
-  transakcję }.
+  transakcję }
 
   \subsection{System do głosowania}
 
@@ -323,58 +327,8 @@
   warunków możemy zawrzeć umowę z kimś komu nie ufamy bez potrzeby pośrednika w
   postaci notariusza.
 
-%
-% ---- Bibliography ----
-%
-% BibTeX users should specify bibliography style 'splncs04'.
-% References will then be sorted and formatted in the correct style.
-%
-\bibliographystyle{splncs04}
-% \bibliographystyle{chicago}
-
-% \bibliography{mybibliography}
-%
-\begin{thebibliography}{splncs04}
-
-  \bibitem{ethereum} Ethereum Homepage,
-  \url{https://www.ethereum.org/}
-
-  \bibitem{ethereum-doc} Ethereum Homestead
-  \url{http://www.ethdocs.org/en/latest/}
-
-  \bibitem{proof-of-stake} Proof of Stake FAQ
-  \url{https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ}
-
-  \bibitem{solidity} Solidity - dokumentacj
-  \url{https://solidity.readthedocs.io/en/v0.4.24/}
-
-  \bibitem{nazwa-pl-utrata-danych} Awaria w Nazwa.pl – klienci stracili dane,
-  także z backupów,
-  \url{https://niebezpiecznik.pl/post/awaria-w-nazwa-pl-klienci-stracili-dane-takze-z-backupow/}
-
-  \bibitem{teatr-wspolczesny-utrata-danych} Teatr Współczesny zhackowany?
-  Niestety to nie happening
-  \url{https://niebezpiecznik.pl/post/awaria-w-nazwa-pl-klienci-stracili-dane-takze-z-backupow/}
-
-  \bibitem{wyciek-danych-studentow} Wyszukiwarki studentów, publiczna lista
-  usterek i niebezpieczne punkty ksero, czyli uczelnianych wpadek cz. IV
-  \url{https://niebezpiecznik.pl/post/wyszukiwarki-studentow-publiczna-lista-usterek-i-niebezpieczne-punkty-ksero-czyli-uczelnianych-wpadek-cz-iv/}
-
-  \bibitem{utrata-dokumentacji} Skutki utraty dokumentacji podatkowej
-  \url{http://www.ordynacjapodatkowa.pl/artykul,1679,5273,skutki-utraty-dokumentacji-podatkowej.html}
-
-  \bibitem{dane-dzieci} Jak pozyskać dane osobowe i adresy dzieci z twojej
-  okolicy?
-  \url{https://niebezpiecznik.pl/post/jak-pozyskac-dane-osobowe-i-adresy-dzieci-z-twojej-okolicy/}
-
-  \bibitem{liczby-losowe} Predicting Random Numbers in Ethereum Smart Contracts
-  \url{https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620}
-
-  \bibitem{open-zeppelin} OpenZeppelin
-  \url{https://github.com/OpenZeppelin/zeppelin-solidity}
-
-\end{thebibliography}
-
+\printbibliography
+\end{document}
 
 % ########## START OF SAMPLES
 
@@ -421,5 +375,3 @@
 % \end{table}
 
 % % ########## END OF SAMPLES
-
-\end{document}

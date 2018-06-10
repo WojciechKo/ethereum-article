@@ -1,0 +1,261 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{solidity-doc}{online}{}
+      \name{author}{1}{}{%
+        {{hash=6254fbcb662c84e180f634f4adb9681a}{%
+           family={community},
+           familyi={c\bibinitperiod},
+           given={Ethereum},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{fullhash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{bibnamehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{authorbibnamehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{authornamehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{authorfullhash}{6254fbcb662c84e180f634f4adb9681a}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Solidity - dokumentacja}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://solidity.readthedocs.io/en/v0.4.24/
+      \endverb
+      \verb{url}
+      \verb https://solidity.readthedocs.io/en/v0.4.24/
+      \endverb
+    \endentry
+    \entry{ethereum-doc}{online}{}
+      \name{author}{1}{}{%
+        {{hash=6254fbcb662c84e180f634f4adb9681a}{%
+           family={community},
+           familyi={c\bibinitperiod},
+           given={Ethereum},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{fullhash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{bibnamehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{authorbibnamehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{authornamehash}{6254fbcb662c84e180f634f4adb9681a}
+      \strng{authorfullhash}{6254fbcb662c84e180f634f4adb9681a}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ethereum - dokumentacja}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://www.ethdocs.org/en/latest/
+      \endverb
+      \verb{url}
+      \verb http://www.ethdocs.org/en/latest/
+      \endverb
+    \endentry
+    \entry{proof-of-stake}{online}{}
+      \name{author}{1}{}{%
+        {{hash=850981945102d0f671b6762173c8988a}{%
+           family={Buterin},
+           familyi={B\bibinitperiod},
+           given={Vitalik},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{850981945102d0f671b6762173c8988a}
+      \strng{fullhash}{850981945102d0f671b6762173c8988a}
+      \strng{bibnamehash}{850981945102d0f671b6762173c8988a}
+      \strng{authorbibnamehash}{850981945102d0f671b6762173c8988a}
+      \strng{authornamehash}{850981945102d0f671b6762173c8988a}
+      \strng{authorfullhash}{850981945102d0f671b6762173c8988a}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{10}
+      \field{month}{9}
+      \field{title}{Proof of Stake FAQ}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ
+      \endverb
+      \verb{url}
+      \verb https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ
+      \endverb
+    \endentry
+    \entry{teatr-wspolczesny-utrata-danych}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b0dca819f76866b88d18842e6edc3314}{%
+           family={Maj},
+           familyi={M\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{fullhash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{bibnamehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{authorbibnamehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{authornamehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{authorfullhash}{b0dca819f76866b88d18842e6edc3314}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{22}
+      \field{month}{3}
+      \field{title}{Teatr Współczesny zhackowany? Niestety to nie happening}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://niebezpiecznik.pl/post/teatr-wspolczesny-zhackowany-niestety-to-nie-happening
+      \endverb
+      \verb{url}
+      \verb https://niebezpiecznik.pl/post/teatr-wspolczesny-zhackowany-niestety-to-nie-happening
+      \endverb
+    \endentry
+    \entry{nazwa-pl-utrata-danych}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e1e0a0262cfe47fe716247b61d174c82}{%
+           family={niebezpiecznik.pl},
+           familyi={n\bibinitperiod},
+           given={Redakcja},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{fullhash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{bibnamehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{authorbibnamehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{authornamehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{authorfullhash}{e1e0a0262cfe47fe716247b61d174c82}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{18}
+      \field{month}{1}
+      \field{title}{Awaria w Nazwa.pl – klienci stracili dane, także z backupów}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://niebezpiecznik.pl/post/awaria-w-nazwa-pl-klienci-stracili-dane-takze-z-backupow/
+      \endverb
+      \verb{url}
+      \verb https://niebezpiecznik.pl/post/awaria-w-nazwa-pl-klienci-stracili-dane-takze-z-backupow/
+      \endverb
+    \endentry
+    \entry{wyciek-danych-studentow}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b0dca819f76866b88d18842e6edc3314}{%
+           family={Maj},
+           familyi={M\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{fullhash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{bibnamehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{authorbibnamehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{authornamehash}{b0dca819f76866b88d18842e6edc3314}
+      \strng{authorfullhash}{b0dca819f76866b88d18842e6edc3314}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{8}
+      \field{month}{5}
+      \field{title}{Wyszukiwarki studentów, publiczna lista usterek i niebezpieczne punkty ksero, czyli uczelnianych wpadek cz. IV}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://niebezpiecznik.pl/post/wyszukiwarki-studentow-publiczna-lista-usterek-i-niebezpieczne-punkty-ksero-czyli-uczelnianych-wpadek-cz-iv/
+      \endverb
+      \verb{url}
+      \verb https://niebezpiecznik.pl/post/wyszukiwarki-studentow-publiczna-lista-usterek-i-niebezpieczne-punkty-ksero-czyli-uczelnianych-wpadek-cz-iv/
+      \endverb
+    \endentry
+    \entry{utrata-dokumentacji}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4ab294dedfd32a372c7f8c3a3e47a13e}{%
+           family={Podatkowa},
+           familyi={P\bibinitperiod},
+           given={Gazeta},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ab294dedfd32a372c7f8c3a3e47a13e}
+      \strng{fullhash}{4ab294dedfd32a372c7f8c3a3e47a13e}
+      \strng{bibnamehash}{4ab294dedfd32a372c7f8c3a3e47a13e}
+      \strng{authorbibnamehash}{4ab294dedfd32a372c7f8c3a3e47a13e}
+      \strng{authornamehash}{4ab294dedfd32a372c7f8c3a3e47a13e}
+      \strng{authorfullhash}{4ab294dedfd32a372c7f8c3a3e47a13e}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{17}
+      \field{month}{10}
+      \field{title}{Skutki utraty dokumentacji podatkowej}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://www.ordynacjapodatkowa.pl/artykul,1679,5273,skutki-utraty-dokumentacji-podatkowej.html
+      \endverb
+      \verb{url}
+      \verb http://www.ordynacjapodatkowa.pl/artykul,1679,5273,skutki-utraty-dokumentacji-podatkowej.html
+      \endverb
+    \endentry
+    \entry{dane-dzieci}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e1e0a0262cfe47fe716247b61d174c82}{%
+           family={niebezpiecznik.pl},
+           familyi={n\bibinitperiod},
+           given={Redakcja},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{fullhash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{bibnamehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{authorbibnamehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{authornamehash}{e1e0a0262cfe47fe716247b61d174c82}
+      \strng{authorfullhash}{e1e0a0262cfe47fe716247b61d174c82}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{10}
+      \field{month}{5}
+      \field{title}{Jak pozyskać dane osobowe i adresy dzieci z twojej okolicy?}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://niebezpiecznik.pl/post/jak-pozyskac-dane-osobowe-i-adresy-dzieci-z-twojej-okolicy
+      \endverb
+      \verb{url}
+      \verb https://niebezpiecznik.pl/post/jak-pozyskac-dane-osobowe-i-adresy-dzieci-z-twojej-okolicy
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
