@@ -12,6 +12,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{polski}
 \usepackage{url}
+\pagestyle{plain}
 
 \usepackage[language=polish, sorting=none]{biblatex}
 \addbibresource{bibliography.bib}
@@ -39,6 +40,11 @@
 }
 
 \maketitle
+
+\makeatletter
+\let\ps@oldempty\ps@empty % save default definition of \ps@empty
+\renewcommand\ps@empty\ps@plain
+\makeatother
 
 \begin{abstract}
 
