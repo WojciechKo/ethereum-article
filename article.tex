@@ -16,9 +16,14 @@
 % Translate some names to polish
 \def\keywordname{{\bf Słowa Kluczowe:}}
 
-\usepackage{letltxmacro} \LetLtxMacro{\oldcite}{\cite}
+\usepackage{letltxmacro}
+\LetLtxMacro{\oldcite}{\cite}
 % \renewcommand{\cite}[1]{\hspace{.25em}\oldcite{#1}}
 \renewcommand{\cite}[1]{~\oldcite{#1}}
+
+\LetLtxMacro{\oldfootnote}{\footnote}
+\renewcommand{\footnote}[1]{~\oldfootnote{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
 
 \begin{document}
 
@@ -33,14 +38,15 @@
 
 \begin{abstract}
 
-  Opis smart kontraktów zdefiniowanych na platformie Ethereum. Przykład
-  wykorzystania Ethereum do zrealizowania zdecentralizowanego systemu do
-  głosowania. Koniec artykułu zostanie poświęcony poszczególnym zagrożeniom
-  wynikającym z wykorzystania smart kontraktów wraz z konsekwencjami ich
-  przeoczenia
+  Artykuł zaczyna się od opisu Ethereum jako platformy do definiowania smart
+  kontraktów. W kolejnym rozdziale znajduje się opis możliwości smart kontraktów
+  wraz z przykładem ich wykorzystania w postaci rozproszonego systemu do
+  głosowania. Następnie opisany jest sposób komunikacji z siecią Ethereum z
+  poziomu aplikacji przeglądarkowej. Ostatni rozdział traktuje o bezpieczeństwie
+  i zagrożeniach wynikających z utraty kontroli nad danymi aplikacji.
 
-  \keywords{Ethereum \and Smart kontrakt \and Blockchain \and Decentralized
-  Application \and DApp}
+  \keywords{Ethereum \and Smart kontrakt \and Blockchain \and Aplikacje
+  Zdecentralizowane}
 
 \end{abstract}
 
@@ -66,14 +72,14 @@
   Można znaleźć tłumaczenia, które opisują smart kontrakt jako cyfrowy zapis
   umowy, która w odpowiednich warunkach realizuje ustaloną akcję. Z technicznego
   punktu widzenia jest to zbiór danych, które zostaną zachowane dopóki działa
-  conajmniej jeden z węzłów sieci Ethereum, oraz funkcji, które mogą operować na
+  co najmniej jeden z węzłów sieci Ethereum, oraz funkcji, które mogą operować na
   danych i są jedynym sposobem na ich zmianę.
 
   Ta funkcjonalność spowodowała powstanie nowego rodzaju aplikacji oznaczanych
   DApp, od angielskiego terminu Decentralized Application, co oznacza w języku
   angielskim "zdecentralizowana aplikacja". Są to aplikacje, które wykorzystują
   smart kontrakty, lub bardziej ogólnie blockchain, jako miejsce do
-  przechowywania kodu i danych aplikacji. W ethereum smart kontrakty definiuje
+  przechowywania kodu i danych aplikacji. W Ethereum smart kontrakty definiuje
   się wykorzystując język Solidity\cite{solidity}.
 
   Wywołania niektórych funkcji wymagają przekazania Etheru, który może być
@@ -104,7 +110,7 @@
   funkcję na wszystkich węzłach powoduje że za jej wywołanie, wołający musi
   zapłacić. Koszt operacji wyrażany jest w jednostce Gas. Ilość Gasu potrzebnego
   do wywołania funkcji jest proporcjonalna do złożoności obliczeniowej wołanej
-  funkcji. Podczas tworzenia transakcji można określić ile maksymalnie gasu może
+  funkcji. Podczas tworzenia transakcji można określić ile maksymalnie Gasu może
   być wykorzystane na wywołanie funkcji. Jeżeli podczas wywoływania funkcji
   ustalony limit zostanie osiągnięty, wywołanie zostaje przerwane aby nie
   przekroczyć limitu.
@@ -116,13 +122,13 @@
   ponieważ to kopacz dostaję opłata za Gas ze wszystkich transakcji które
   wchodzą w skład nowo wykopanego bloku. Stąd cena Gasu zależy od aktualnego
   obciążenia sieci oraz od tego czy chcemy aby nasza funkcja została wywołana
-  jak najszybciej. Po ustaleniu zbyt niskiej ceny za transakcję może się zdażyć
+  jak najszybciej. Po ustaleniu zbyt niskiej ceny za transakcję może się zdążyć
   tak, że kopacze będą wybierać bardziej korzystne dla nich transakcje powodując
   że transakcja może znajdować się w puli transakcji przez bardzo długi
-  czas.\footnote{\url{https://ethgasstation.info/} - serwis do obliczania opłaty
-  za Gas}.
+  czas.\footnote{\url{https://ethgasstation.info/} – serwis estymujący opłatę za
+  transakcję }.
 
-\subsection{System do głosowania}
+  \subsection{System do głosowania}
 
   Smart kontrakty mogą zostać wykorzystane do zbudowania systemu do tajnego
   głosowania. Organizator głosowania tworzy umowę z osobami uprawnionymi do
@@ -194,36 +200,36 @@
   Sieć Ethereum\cite{ethereum-doc} składa się z węzłów. Węzeł to serwer, który
   posiada lokalną kopię blockchainu wraz ze wszystkimi transakcjami i smart
   kontraktami, które zostały w nim zapisane. Węzły komunikują się ze sobą w celu
-  ustalienia jednej, wspólnej wersji blockchainu, jest to nazywane ustaleniem
+  ustalenia jednej, wspólnej wersji blockchainu, jest to nazywane ustaleniem
   konsensusu. Najbardziej rozpowszechnionym sposobem ustalenia konsensusu, który
   jest wykorzystywany zarówno w Ethereum jak i w Bitcoinie, jest dowód pracy. W
   związku z ogromnym zużyciem energii elektrycznej które jest wymagane przed
   dowód pracy jedną z propozycji rozwoju Ethereum jest zmiana sposobu ustalania
-  konsensudu i przejście na dowód stawki.\cite{proof-of-stake}
+  konsensusu i przejście na dowód stawki.\cite{proof-of-stake}
 
   Aby utworzyć własny węzeł Ethereum można wykorzystać oficjalną implementację
   węzła, dostępną do pobrania z serwisu
-  Github\footnote{https://github.com/ethereum/go-ethereum}. Nie jest to jednak
+  Github\footnote{\url{https://github.com/ethereum/go-ethereum}}. Nie jest to jednak
   koniecznie jeżeli chcemy zacząć przygodę z tworzeniem smart kontraktów. Serwis
-  Infura\footnote{https://infura.io/} udostępnia za darmo publiczny węzeł, który
+  Infura\footnote{\url{https://infura.io/}} udostępnia za darmo publiczny węzeł, który
   można wykorzystać do komunikacji z siecią Ethereum. Komunikacja z węzłem
   następuje przy pomocy protokołu JSON-RPC. Jednym z bardziej znanych klientów
   jest klient napisany w języku JavaScript o nazwie
-  Web3.js\footnote{https://github.com/ethereum/web3.js/}. Wykorzystując go można
+  Web3.js\footnote{\url{https://github.com/ethereum/web3.js/}}. Wykorzystując go można
   stworzyć aplikację działającą w przeglądarce, która komunikuje się
   bezpośrednio z węzłem Ethereum.
 
   Aby utworzyć własny kontrakt w sieci można skorzystać z narzędzia
-  Remix\footnote{https://remix.ethereum.org/}. Jest to edytor w, którym można
+  Remix\footnote{\url{https://remix.ethereum.org/}}. Jest to edytor w, którym można
   napisać własny kontrakt a następnie z poziomu przeglądarki utworzyć jego kopię
   na blockchainie. Aby możliwe było utworzenie kontraktu na blockchainie twórca
   musi musi ponieść koszt utworzenia kontraktu. W przypadku narzędzia Remix oraz
   innych aplikacji przeglądarkowych wykorzystujących klienta Web3.js można
   skorzystać z wtyczki do przeglądarki o nazwie
-  Metamask\footnote{https://metamask.io/}.
+  Metamask\footnote{\url{https://metamask.io/}}.
 
   Technicznie Metamask wstrzykuje do strony globalny obiekt JavaScript o nazwie
-  web3, który jest wykorzystywany do dalszej interakcji z blockchainem. Podczas
+  \code{web3}, który jest wykorzystywany do dalszej interakcji z blockchainem. Podczas
   tworzenia nowego smart kontraktu lub wywoływania funkcji, która wymaga zapłaty
   pojawia się okienko, które wymaga potwierdzenia czy chcemy wykonać daną akcję
   za określoną opłatą.
@@ -286,9 +292,9 @@
 
   W celu wykorzystania sprawdzonych rozwiązań na problemy, które często się
   powtarzają podczas projektowania smart kontraktów warto skorzystać ze zbioru
-  OpenZeppelin\footnote{https://github.com/OpenZeppelin/zeppelin-solidity}.
+  OpenZeppelin\footnote{\url{https://github.com/OpenZeppelin/zeppelin-solidity}}.
   Można znaleźć tam gotowe smart kontrakty lub funkcje, które rozwiązują dane
-  problemy bezpieczeństwa w sprawdzony przez społecznośc Ethereum sposób.
+  problemy bezpieczeństwa w sprawdzony przez społeczność Ethereum sposób.
   Przykładem może być chęć ograniczenia możliwości wywołania niektórych funkcji
   tylko do autora danego smart kontraktu. Jedną z takich funkcji może być
   wspomniana wcześniej funkcja służąca do wybrania Etheru, który jest
@@ -301,7 +307,7 @@
 \section{Podsumowanie}
 
   W mojej opinii technologia blockchain spowoduje rewolucję w sposobie pracy
-  instytucj zajmującymi się obrotem walutami na miarę rewolucji, którą
+  instytucji zajmującymi się obrotem walutami na miarę rewolucji, którą
   spowodował internet w obszarze wymiany informacji. Wiele z instytucji
   finansowych można zastąpić poprzed zdefiniowane smart kontraktu, który zawsze
   działa tak samo i nie popełnia błędów. Instytucją, która jako pierwsza została
@@ -323,7 +329,9 @@
 % BibTeX users should specify bibliography style 'splncs04'.
 % References will then be sorted and formatted in the correct style.
 %
-% \bibliographystyle{splncs04}
+\bibliographystyle{splncs04}
+% \bibliographystyle{chicago}
+
 % \bibliography{mybibliography}
 %
 \begin{thebibliography}{splncs04}
